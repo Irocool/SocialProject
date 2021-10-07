@@ -33,6 +33,7 @@ class LoginFormViewController: UIViewController {
         contentView.backgroundColor = Colors.palePurplePantone
         view.backgroundColor = Colors.palePurplePantone
         
+        setupLabel()
         setupButton()
         setupTextFields()
         setupLoadingView()
@@ -44,7 +45,7 @@ class LoginFormViewController: UIViewController {
     func setupButton() {
         
         loginButton?.layer.cornerRadius = 5
-        loginButton?.backgroundColor = .lightGray//Colors.baseVK
+        loginButton?.backgroundColor = Colors.baseVK
         loginButton?.titleLabel!.font = UIFont(name: "HelveticaNeue", size: 25)
         loginButton?.setTitleColor(Colors.darkPalePurplePantone, for: .normal)
     }
@@ -54,6 +55,9 @@ class LoginFormViewController: UIViewController {
             textField?.layer.cornerRadius = 20.0
             textField?.backgroundColor = .lightGray
         }
+    }
+    func setupLabel(){
+        SocialProjLabel?.textColor = Colors.oxfordBlue
     }
     
     func setupLoadingView() {
@@ -74,7 +78,6 @@ class LoginFormViewController: UIViewController {
         
         // Отписка от уведомлений
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
     // MARK: - Настройки использования клавиатуры
@@ -123,19 +126,15 @@ class LoginFormViewController: UIViewController {
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertContoller.addAction(action)
         present(alertContoller, animated: true, completion: nil)
+        
     }
     
     // MARK: - Переход к TabBarController при успешной авторизации
-//    func moveToTabBarController() {
-//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "TabBarController") as! TabBarController
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true, completion: nil)
-//    }
     
     func tryToEnter() {
         if isLoginSuccesfull() {
             print("Успешный вход!")
-            //moveToTabBarController()
+           
         } else {
             print("Неудачный вход! Подсказка: логин - admin, пароль - admin")
             showLoginErrorAlert()
@@ -147,7 +146,9 @@ class LoginFormViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + Double.random(in: 2...6)) {
             self.loadingView.isHidden = true
             self.tryToEnter()
+            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+            
         }
-
+        
     }
 }
