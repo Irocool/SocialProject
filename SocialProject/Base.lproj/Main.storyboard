@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -104,7 +105,7 @@
         <!--Группы-->
         <scene sceneID="rmJ-a5-8cu">
             <objects>
-                <tableViewController storyboardIdentifier="TableViewControllerGroup" title="Группы" id="DEv-O8-XUS" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TableViewControllerGroup" title="Группы" id="DEv-O8-XUS" customClass="GroupTableViewController" customModule="SocialProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SEJ-tc-pRK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,11 +125,46 @@
                             <outlet property="delegate" destination="DEv-O8-XUS" id="Gyu-bG-9bM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Группы" id="PLm-hr-D4r"/>
+                    <navigationItem key="navigationItem" title="Группы" id="PLm-hr-D4r">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="dOm-Gv-gJH">
+                            <connections>
+                                <segue destination="4hb-3n-OaU" kind="show" id="G82-pf-44B"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTb-bg-ZGH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3864" y="877"/>
+        </scene>
+        <!--Add Group Table View Controller-->
+        <scene sceneID="rHg-QZ-Oil">
+            <objects>
+                <tableViewController storyboardIdentifier="TableViewControllerAddGroup" id="4hb-3n-OaU" customClass="AddGroupTableViewController" customModule="SocialProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FHC-7q-chg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Txw-PV-G6d">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Txw-PV-G6d" id="AuS-K2-fLH">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4hb-3n-OaU" id="eGC-Qy-tTf"/>
+                            <outlet property="delegate" destination="4hb-3n-OaU" id="CXY-mT-hzn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Nei-oa-zdz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ccc-nZ-a4I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4625" y="877"/>
         </scene>
         <!--Группы-->
         <scene sceneID="ZTP-pJ-CPQ">
@@ -163,6 +199,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="TVh-gw-J9g" kind="show" trigger="accessoryAction" id="v1i-Es-UUm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -176,12 +215,48 @@
             </objects>
             <point key="canvasLocation" x="4773.913043478261" y="81.696428571428569"/>
         </scene>
-        <!--Друзья-->
+        <!--Friends Collection View Controller-->
+        <scene sceneID="Mhv-G7-eS3">
+            <objects>
+                <collectionViewController storyboardIdentifier="FriendsCollectionViewController" id="TVh-gw-J9g" customClass="FriendsCollectionViewController" customModule="SocialProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="oDC-Cu-5aP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tP6-yK-vYI">
+                            <size key="itemSize" width="414" height="390"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XWM-KE-C5l">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IvF-Cb-3xg">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="414" height="390"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="TVh-gw-J9g" id="jXQ-VB-orL"/>
+                            <outlet property="delegate" destination="TVh-gw-J9g" id="dVV-5r-trt"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="xeJ-lq-B4V"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QBc-tH-0KO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5518.840579710145" y="81.696428571428569"/>
+        </scene>
+        <!--Tab Bar Controller-->
         <scene sceneID="ORO-tz-hUg">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="g5f-8v-JMX" customClass="TabBarController" customModule="SocialProject" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Друзья" id="z4h-cX-Xf5"/>
+                    <navigationItem key="navigationItem" id="z4h-cX-Xf5"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kA9-GB-8pG">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -237,6 +312,7 @@
     <resources>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
