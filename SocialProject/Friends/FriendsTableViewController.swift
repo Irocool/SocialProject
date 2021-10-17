@@ -9,6 +9,8 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
 
+    @IBOutlet weak var searchView: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
