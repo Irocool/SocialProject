@@ -30,12 +30,12 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email or phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q36-lI-Hwa" userLabel="emailOrPhone">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="admin" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q36-lI-Hwa" userLabel="emailOrPhone">
                                                 <rect key="frame" x="40" y="343" width="336" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-pZ-WZu" userLabel="password">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="admin" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-pZ-WZu" userLabel="password">
                                                 <rect key="frame" x="40" y="457" width="336" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -197,15 +197,15 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewCellFrends" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tqs-af-1Rc" customClass="CustomTableViewCell" customModule="SocialProject" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendTableViewCell" id="tqs-af-1Rc" customClass="CustomTableViewCell" customModule="SocialProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tqs-af-1Rc" id="imT-0C-LK4">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jtg-gM-XZt">
-                                            <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jtg-gM-XZt" customClass="CustomAvatarViewCell" customModule="SocialProject" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="55" height="55.5"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="55" id="03Z-yy-tip"/>
@@ -213,7 +213,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFT-8F-VAD">
-                                            <rect key="frame" x="63" y="11" width="331" height="33"/>
+                                            <rect key="frame" x="63" y="11" width="331" height="33.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -230,7 +230,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="avatarView" destination="Jtg-gM-XZt" id="X9r-Vt-WcX"/>
                                     <outlet property="nameLabel" destination="MFT-8F-VAD" id="l4k-Lc-4Ge"/>
                                     <segue destination="TVh-gw-J9g" kind="show" trigger="accessoryAction" id="v1i-Es-UUm"/>
                                 </connections>
@@ -268,7 +267,7 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XWM-KE-C5l">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IvF-Cb-3xg">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" insetsLayoutMarginsFromSafeArea="NO" id="IvF-Cb-3xg">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>

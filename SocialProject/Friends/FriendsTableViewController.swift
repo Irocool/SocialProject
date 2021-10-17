@@ -2,90 +2,134 @@
 //  FriendsTableViewController.swift
 //  SocialProject
 //
-//  Created by Пользователь on 11.06.2021.
+//  Created by Irina Kuligina on 11.06.2021.
 //
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController {
+class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchView: UISearchBar!
     
+    var sections: [Character] = []             // Массив букв для выделения секций
+    var userData: [Character: [User]] = [:]    // Словарь для получения массива пользователей по букве секции
+    var searchData: [Character: [User]] = [:]  // Такой же как и userData, только при использовании UISearchBar
+    var searchSections: [Character] = []       // Такой же как и sections, используется при UISearchBar
+    
+    private let reuseIdentifier = "CustomTableViewCell"
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        searchView.delegate = self
+        
+        view.backgroundColor = Colors.palePurplePantone
+        tableView.sectionIndexBackgroundColor = Colors.palePurplePantone
+        
+        getUserData()
+        resetSearchTableViewData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getUserData()
+        resetSearchTableViewData()
+    }
+    
+    func getUserData() {
+        userData = [:]
+        var sectionSet: Set<Character> = []
+        for user in User.database {
+            if let letter = user.name.first {
+                sectionSet.insert(letter)
+                
+                if userData[letter] == nil {
+                    userData[letter] = []
+                }
+                
+                userData[letter]?.append(user)
+            }
+        }
+        sections = sectionSet.sorted()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return searchSections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        let sectionLetter = searchSections[section]
+        let users = searchData[sectionLetter] ?? []
+        return users.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return String(searchSections[section])
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! CustomTableViewCell
+        
+        let sectionLetter = searchSections[indexPath.section]
+        let user = searchData[sectionLetter]![indexPath.row]
+        cell.setValues(item: user)
 
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75.0
     }
-    */
+//
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        //if #available(iOS 13.0, *) {
+//            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "FriendsCollectionViewController") as! FriendsCollectionViewController
+//    
+//        
+//        let sectionLetter = searchSections[indexPath.section]
+//    var _ = searchData[sectionLetter]![indexPath.row]
+//        
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
+//    
+//    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+//        return searchSections.map { String($0) }
+//    }
+//    
+    // MARK: - SearchBar setup
+    
+    func resetSearchTableViewData() {
+        searchSections = sections
+        searchData = userData
     }
-    */
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchData = [:]
+        searchSections = []
+        var sectionSearchSet: Set<Character> = []
+        
+        if searchText.isEmpty {
+            resetSearchTableViewData()
+        } else {
+            for section in sections {
+                let userArray = userData[section] ?? []
+                
+                for user in userArray {
+                    if user.name.lowercased().contains(searchText.lowercased()) {
+                        if searchData[section] == nil {
+                            searchData[section] = []
+                        }
+                        sectionSearchSet.insert(section)
+                        searchData[section]?.append(user)
+                    }
+                }
+            }
+            
+            searchSections = Array(sectionSearchSet).sorted()
+         }
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+        self.tableView.reloadData()
+    }}
