@@ -9,7 +9,7 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
         
-    @IBOutlet weak var avatarView: CustomAvatarViewCell!
+    @IBOutlet weak var avatarView: CustomAvatarView!
     @IBOutlet weak var nameLabel: UILabel!
   
     func setValues(item: CellModel) {

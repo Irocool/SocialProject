@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomAvatarViewCell: UIView {
+class CustomAvatarView: UIView {
 
     lazy var imageView: UIImageView = {
         var imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))

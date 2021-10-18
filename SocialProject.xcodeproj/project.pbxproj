@@ -25,7 +25,7 @@
 		595CF9CD25C7155200453C87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 595CF9CB25C7155200453C87 /* LaunchScreen.storyboard */; };
 		595CFA0925C71B3500453C87 /* LoginFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595CFA0825C71B3500453C87 /* LoginFormViewController.swift */; };
 		596BF771271C861F009224D2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BF770271C861F009224D2 /* CustomTableViewCell.swift */; };
-		596BF779271CB03E009224D2 /* CustomAvatarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BF778271CB03E009224D2 /* CustomAvatarViewCell.swift */; };
+		596BF779271CB03E009224D2 /* CustomAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BF778271CB03E009224D2 /* CustomAvatarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,7 @@
 		595CF9DE25C7155300453C87 /* SocialProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		595CFA0825C71B3500453C87 /* LoginFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
 		596BF770271C861F009224D2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		596BF778271CB03E009224D2 /* CustomAvatarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAvatarViewCell.swift; sourceTree = "<group>"; };
+		596BF778271CB03E009224D2 /* CustomAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAvatarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 				59479BEE27162A7C005F3836 /* FriendsCollectionViewController.swift */,
 				591819FD2673BF0B0051079B /* FriendsTableViewController.swift */,
 				596BF770271C861F009224D2 /* CustomTableViewCell.swift */,
-				596BF778271CB03E009224D2 /* CustomAvatarViewCell.swift */,
+				596BF778271CB03E009224D2 /* CustomAvatarView.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -305,7 +305,7 @@
 				591819F12673AADA0051079B /* TabBarController.swift in Sources */,
 				59479BEF27162A7C005F3836 /* FriendsCollectionViewController.swift in Sources */,
 				592F7AFB2671E3340003ED1D /* Post.swift in Sources */,
-				596BF779271CB03E009224D2 /* CustomAvatarViewCell.swift in Sources */,
+				596BF779271CB03E009224D2 /* CustomAvatarView.swift in Sources */,
 				591819F62673B96E0051079B /* CustomNavigationController.swift in Sources */,
 				592F7AF62671E30A0003ED1D /* Group.swift in Sources */,
 				592F7B002671E4030003ED1D /* LoadingView.swift in Sources */,
