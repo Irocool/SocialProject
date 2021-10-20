@@ -23,6 +23,8 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
         
         searchView.delegate = self
         
+        tableView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellReuseIdentifier: reuseIdentifier)
+        
         view.backgroundColor = Colors.palePurplePantone
         tableView.sectionIndexBackgroundColor = Colors.palePurplePantone
         
@@ -82,23 +84,23 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75.0
     }
-//
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        //if #available(iOS 13.0, *) {
-//            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "FriendsCollectionViewController") as! FriendsCollectionViewController
-//    
-//        
-//        let sectionLetter = searchSections[indexPath.section]
-//    var _ = searchData[sectionLetter]![indexPath.row]
-//        
 
-//        self.navigationController?.pushViewController(vc, animated: true)
-//    }
-//    
-//    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-//        return searchSections.map { String($0) }
-//    }
-//    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //if #available(iOS 13.0, *) {
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "FriendsCollectionViewController") as! FriendsCollectionViewController
+    
+        
+        let sectionLetter = searchSections[indexPath.section]
+    var _ = searchData[sectionLetter]![indexPath.row]
+        
+
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return searchSections.map { String($0) }
+    }
+    
     // MARK: - SearchBar setup
     
     func resetSearchTableViewData() {

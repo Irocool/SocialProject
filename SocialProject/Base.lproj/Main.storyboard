@@ -105,13 +105,13 @@
         <!--Группы-->
         <scene sceneID="rmJ-a5-8cu">
             <objects>
-                <tableViewController storyboardIdentifier="TableViewControllerGroup" title="Группы" id="DEv-O8-XUS" customClass="GroupTableViewController" customModule="SocialProject" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Группы" id="DEv-O8-XUS" customClass="GroupTableViewController" customModule="SocialProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SEJ-tc-pRK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="BVm-LI-V1A">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupTableViewCell" id="BVm-LI-V1A" customClass="CustomTableViewCell" customModule="SocialProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BVm-LI-V1A" id="f3x-n2-e5e">
@@ -135,7 +135,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTb-bg-ZGH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3864" y="877"/>
+            <point key="canvasLocation" x="3863.7681159420295" y="876.5625"/>
         </scene>
         <!--Add Group Table View Controller-->
         <scene sceneID="rHg-QZ-Oil">
@@ -146,7 +146,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Txw-PV-G6d">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Txw-PV-G6d" customClass="CustomTableViewCell" customModule="SocialProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Txw-PV-G6d" id="AuS-K2-fLH">
@@ -197,7 +197,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomTableViewCell" id="tqs-af-1Rc" customClass="CustomTableViewCell" customModule="SocialProject" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendTableViewCell" id="tqs-af-1Rc" customClass="CustomTableViewCell" customModule="SocialProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tqs-af-1Rc" id="imT-0C-LK4">
@@ -205,7 +205,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jtg-gM-XZt" customClass="CustomAvatarView" customModule="SocialProject" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="55" height="55.5"/>
+                                            <rect key="frame" x="10" y="0.0" width="55" height="55.5"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="55" id="03Z-yy-tip"/>
@@ -213,19 +213,19 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFT-8F-VAD">
-                                            <rect key="frame" x="63" y="11" width="331" height="33.5"/>
+                                            <rect key="frame" x="75" y="11" width="319" height="33.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="MFT-8F-VAD" firstAttribute="leading" secondItem="Jtg-gM-XZt" secondAttribute="trailing" constant="8" id="AUS-Jz-axN"/>
+                                        <constraint firstItem="MFT-8F-VAD" firstAttribute="leading" secondItem="Jtg-gM-XZt" secondAttribute="trailing" constant="10" id="AUS-Jz-axN"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="MFT-8F-VAD" secondAttribute="bottom" id="Dwg-5S-AqT"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="MFT-8F-VAD" secondAttribute="trailing" id="Pmc-i0-43e"/>
                                         <constraint firstAttribute="bottom" secondItem="Jtg-gM-XZt" secondAttribute="bottom" id="YPj-qE-cdZ"/>
                                         <constraint firstItem="MFT-8F-VAD" firstAttribute="top" secondItem="imT-0C-LK4" secondAttribute="topMargin" id="ads-07-XXc"/>
-                                        <constraint firstItem="Jtg-gM-XZt" firstAttribute="leading" secondItem="imT-0C-LK4" secondAttribute="leading" id="fee-Ba-iw9"/>
+                                        <constraint firstItem="Jtg-gM-XZt" firstAttribute="leading" secondItem="imT-0C-LK4" secondAttribute="leading" constant="10" id="fee-Ba-iw9"/>
                                         <constraint firstItem="Jtg-gM-XZt" firstAttribute="top" secondItem="imT-0C-LK4" secondAttribute="top" id="is0-Bs-BdP"/>
                                     </constraints>
                                 </tableViewCellContentView>
