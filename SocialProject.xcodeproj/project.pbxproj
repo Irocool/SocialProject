@@ -24,6 +24,9 @@
 		595CF9CA25C7155200453C87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 595CF9C925C7155200453C87 /* Assets.xcassets */; };
 		595CF9CD25C7155200453C87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 595CF9CB25C7155200453C87 /* LaunchScreen.storyboard */; };
 		595CFA0925C71B3500453C87 /* LoginFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595CFA0825C71B3500453C87 /* LoginFormViewController.swift */; };
+		596BF779271CB03E009224D2 /* CustomAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BF778271CB03E009224D2 /* CustomAvatarView.swift */; };
+		59CEFA7D2720A047000C4A7C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CEFA7B2720A047000C4A7C /* CustomTableViewCell.swift */; };
+		59CEFA7E2720A047000C4A7C /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59CEFA7C2720A047000C4A7C /* CustomTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		595CF9D325C7155300453C87 /* SocialProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		595CF9DE25C7155300453C87 /* SocialProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		595CFA0825C71B3500453C87 /* LoginFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
+		596BF778271CB03E009224D2 /* CustomAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAvatarView.swift; sourceTree = "<group>"; };
+		59CEFA7B2720A047000C4A7C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		59CEFA7C2720A047000C4A7C /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,9 @@
 			children = (
 				59479BEE27162A7C005F3836 /* FriendsCollectionViewController.swift */,
 				591819FD2673BF0B0051079B /* FriendsTableViewController.swift */,
+				596BF778271CB03E009224D2 /* CustomAvatarView.swift */,
+				59CEFA7B2720A047000C4A7C /* CustomTableViewCell.swift */,
+				59CEFA7C2720A047000C4A7C /* CustomTableViewCell.xib */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -264,6 +273,7 @@
 			files = (
 				595CF9CD25C7155200453C87 /* LaunchScreen.storyboard in Resources */,
 				595CF9CA25C7155200453C87 /* Assets.xcassets in Resources */,
+				59CEFA7E2720A047000C4A7C /* CustomTableViewCell.xib in Resources */,
 				595CF9C825C7153700453C87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +308,8 @@
 				591819F12673AADA0051079B /* TabBarController.swift in Sources */,
 				59479BEF27162A7C005F3836 /* FriendsCollectionViewController.swift in Sources */,
 				592F7AFB2671E3340003ED1D /* Post.swift in Sources */,
+				59CEFA7D2720A047000C4A7C /* CustomTableViewCell.swift in Sources */,
+				596BF779271CB03E009224D2 /* CustomAvatarView.swift in Sources */,
 				591819F62673B96E0051079B /* CustomNavigationController.swift in Sources */,
 				592F7AF62671E30A0003ED1D /* Group.swift in Sources */,
 				592F7B002671E4030003ED1D /* LoadingView.swift in Sources */,
