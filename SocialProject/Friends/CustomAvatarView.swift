@@ -35,9 +35,9 @@ class CustomAvatarView: UIView {
     lazy var imageView: UIImageView = {
         var imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = imageView.frame.height / 2
+        imageView.layer.cornerRadius =  imageView.frame.height / 2
         imageView.contentMode = .scaleAspectFill
-
+        self.addSubview(imageView)
         return imageView
     }()
     

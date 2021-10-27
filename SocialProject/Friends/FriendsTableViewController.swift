@@ -100,7 +100,39 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return searchSections.map { String($0) }
     }
+    // MARK: - Custom Section View
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let viewHeight: CGFloat = 55
+        let viewFrame: CGRect = CGRect(x: 0, y: 0, width: tableView.frame.width, height: viewHeight)
+        let view = UIView(frame: viewFrame)
+        
+        view.backgroundColor = Colors.palePurplePantone.withAlphaComponent(0.65)
+        
+        let sectionLabelFrame: CGRect = CGRect(x: 15, y: 5, width: 15, height: viewHeight/2)
+        let sectionLabel = UILabel(frame: sectionLabelFrame)
+        sectionLabel.textAlignment = .center
+        sectionLabel.textColor = Colors.oxfordBlue
+        sectionLabel.text = String(searchSections[section])
+        
+        view.addSubview(sectionLabel)
+        
+        return view
+    }
+
+    // MARK: Cell animation
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // Before animation
+        cell.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        cell.alpha = 0.0
+        
+        // Animation
+        UIView.animate(withDuration: 1.0) {
+            cell.transform = .identity
+            cell.alpha = 1.0
+        }
+    }
     // MARK: - SearchBar setup
     
     func resetSearchTableViewData() {
