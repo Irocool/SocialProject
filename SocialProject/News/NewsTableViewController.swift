@@ -19,7 +19,7 @@ class NewsTableViewController: UITableViewController {
         tableView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellReuseIdentifier: reuseIdentifier)
         
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 600
+        tableView.estimatedRowHeight = 200
         
         getNews()
     }

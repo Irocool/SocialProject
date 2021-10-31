@@ -40,7 +40,7 @@
             </constraints>
             <size key="customSize" width="320" height="260"/>
             <connections>
-                <outlet property="ImageView" destination="enR-11-5lV" id="ByK-7L-aPy"/>
+                <outlet property="imageView" destination="enR-11-5lV" id="wjW-dZ-U6I"/>
                 <outlet property="likeButton" destination="FSX-nH-qLc" id="u05-ZK-zXf"/>
             </connections>
             <point key="canvasLocation" x="107.24637681159422" y="63.616071428571423"/>
