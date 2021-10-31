@@ -20,7 +20,7 @@ struct User: CellModel {
     var name: String
     var isAdded: Bool
     
-    //var posts: [Post]
+    var posts: [Post]
     
     static func changeUserAdded(by id: Int) {
         for i in 0..<database.count {
@@ -43,13 +43,13 @@ struct User: CellModel {
     }
     
     static var database: [User] = [
-        User(id: 0, image: UIImage(named: "profile1")!, name: "Иван Иванов", isAdded: true),
+        User(id: 0, image: UIImage(named: "profile1")!, name: "Иван Иванов", isAdded: true, posts: [Post(id: 0, ownerId: 0, image: UIImage(named: "profile1")!, likeState: .dislike, date: Date(), text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut tristique felis. Curabitur vehicula id est in efficitur.", likesCount: 2, viewsCount: 10), Post(id: 1, ownerId: 0, image: UIImage(named: "profile2")!, likeState: .like, date: Date(), text: "vel pretium lectus quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate", likesCount: 2, viewsCount: 10), Post(id: 6, ownerId: 0, image: UIImage(named: "profile3")!, likeState: .like, date: Date(), text: "vel pretium lectus quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate", likesCount: 2, viewsCount: 10)]),
                                         
-        User(id: 1, image: UIImage(named: "profile2")!, name: "Мария Иванова", isAdded: true),
+        User(id: 1, image: UIImage(named: "profile2")!, name: "Мария Иванова", isAdded: true, posts: [Post(id: 2, ownerId: 1, image: UIImage(named: "profile2")!, likeState: .dislike, date: Date(), text: "dignissim cras tincidunt lobortis feugiat", likesCount: 399, viewsCount: 672)]),
         
-        User(id: 2, image: UIImage(named: "profile3")!, name: "Николай Сидоров", isAdded: true),
+        User(id: 2, image: UIImage(named: "profile3")!, name: "Николай Сидоров", isAdded: true, posts: [Post(id: 3, ownerId: 2, image: UIImage(named: "profile3")!, likeState: .dislike, date: Date(), text: "lacus laoreet non curabitur gravida arcu ac tortor dignissim convallis", likesCount: 0, viewsCount: 1)]),
         
-        User(id: 3, image: UIImage(named: "profile3")!, name: "Леонид Харламов", isAdded: true)
+        User(id: 3, image: UIImage(named: "profile3")!, name: "Леонид Харламов", isAdded: true, posts: [Post(id: 4, ownerId: 3, image: UIImage(named: "profile3")!, likeState: .dislike, date: Date(), text: "euismod lacinia at quis risus sed vulputate odio ut enim blandit volutpat", likesCount: 4, viewsCount: 12)]),
     ]
 }
 

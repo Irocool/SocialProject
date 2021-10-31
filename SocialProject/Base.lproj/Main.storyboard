@@ -36,12 +36,12 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="admin" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-pZ-WZu" userLabel="password">
-                                                <rect key="frame" x="40" y="457" width="336" height="34"/>
+                                                <rect key="frame" x="40" y="427" width="336" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9If-W5-hg0">
-                                                <rect key="frame" x="40" y="541" width="336" height="33"/>
+                                                <rect key="frame" x="40" y="511" width="336" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="log in"/>
                                                 <connections>
@@ -54,7 +54,7 @@
                                         <constraints>
                                             <constraint firstItem="qAN-eG-PpW" firstAttribute="top" secondItem="F5F-tV-kKU" secondAttribute="top" constant="141" id="1Sa-I0-4OK"/>
                                             <constraint firstItem="Q36-lI-Hwa" firstAttribute="top" secondItem="F5F-tV-kKU" secondAttribute="top" constant="343" id="1XB-Mq-L8y"/>
-                                            <constraint firstItem="xfD-pZ-WZu" firstAttribute="top" secondItem="Q36-lI-Hwa" secondAttribute="bottom" constant="80" id="AIE-GF-5BI"/>
+                                            <constraint firstItem="xfD-pZ-WZu" firstAttribute="top" secondItem="Q36-lI-Hwa" secondAttribute="bottom" constant="50" id="AIE-GF-5BI"/>
                                             <constraint firstAttribute="trailing" secondItem="qAN-eG-PpW" secondAttribute="trailing" constant="38" id="G5w-Xc-wTM"/>
                                             <constraint firstItem="Q36-lI-Hwa" firstAttribute="trailing" secondItem="xfD-pZ-WZu" secondAttribute="trailing" id="PCS-mK-cPu"/>
                                             <constraint firstItem="xfD-pZ-WZu" firstAttribute="leading" secondItem="9If-W5-hg0" secondAttribute="leading" id="bUd-Aj-42L"/>
@@ -102,6 +102,36 @@
             </objects>
             <point key="canvasLocation" x="2060.8695652173915" y="81.696428571428569"/>
         </scene>
+        <!--Новости-->
+        <scene sceneID="L9v-Gu-IzV">
+            <objects>
+                <tableViewController id="b9G-jH-e5G" customClass="NewsTableViewController" customModule="SocialProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sP9-yf-zty">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" red="0.97484000774457569" green="0.84211796560048935" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Y5V-wW-VL2" customClass="NewsTableViewCell" customModule="SocialProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y5V-wW-VL2" id="Wlu-0n-DoD">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="b9G-jH-e5G" id="igW-Dt-PD5"/>
+                            <outlet property="delegate" destination="b9G-jH-e5G" id="Xbu-hS-6cY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Новости" id="vEj-Nf-CYz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRF-bQ-u1Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4577" y="767"/>
+        </scene>
         <!--Группы-->
         <scene sceneID="rmJ-a5-8cu">
             <objects>
@@ -135,7 +165,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTb-bg-ZGH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3863.7681159420295" y="876.5625"/>
+            <point key="canvasLocation" x="4577" y="82"/>
         </scene>
         <!--Add Group Table View Controller-->
         <scene sceneID="rHg-QZ-Oil">
@@ -164,7 +194,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccc-nZ-a4I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4625" y="877"/>
+            <point key="canvasLocation" x="5390" y="82"/>
         </scene>
         <!--Группы-->
         <scene sceneID="ZTP-pJ-CPQ">
@@ -181,7 +211,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ah-41-Itg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2939" y="877"/>
+            <point key="canvasLocation" x="3764" y="82"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="iuT-ZM-bax">
@@ -248,7 +278,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJt-bG-zbE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4773.913043478261" y="81.696428571428569"/>
+            <point key="canvasLocation" x="4577" y="-606"/>
         </scene>
         <!--Friends Collection View Controller-->
         <scene sceneID="Mhv-G7-eS3">
@@ -265,18 +295,12 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="XWM-KE-C5l">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="XWM-KE-C5l" customClass="PostCollectionViewCell" customModule="SocialProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" insetsLayoutMarginsFromSafeArea="NO" id="IvF-Cb-3xg">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wkl-2P-oxu">
-                                            <rect key="frame" x="8" y="8" width="398" height="374"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                    </subviews>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="414" height="390"/>
                             </collectionViewCell>
@@ -290,7 +314,22 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBc-tH-0KO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5517.3913043478269" y="81.696428571428569"/>
+            <point key="canvasLocation" x="5364" y="-606"/>
+        </scene>
+        <!--Photo Viewer View Controller-->
+        <scene sceneID="3Jn-ga-hb1">
+            <objects>
+                <viewController storyboardIdentifier="PhotoViewerViewController" id="tfK-hJ-LqN" customClass="PhotoViewerViewController" customModule="SocialProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0oo-D2-Xtw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DD5-hx-L1D"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oia-gQ-nER" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6145" y="-606"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ORO-tz-hUg">
@@ -306,6 +345,7 @@
                     <connections>
                         <segue destination="AUY-Sx-A6J" kind="relationship" relationship="viewControllers" id="hAH-H8-mzj"/>
                         <segue destination="bkr-SJ-3o0" kind="relationship" relationship="viewControllers" id="2KR-er-eU3"/>
+                        <segue destination="dGY-B0-jcz" kind="relationship" relationship="viewControllers" id="Ii5-1Y-wqR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHX-rn-HBg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -346,10 +386,32 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fd7-E9-iqK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3863.7681159420295" y="81.696428571428569"/>
+            <point key="canvasLocation" x="3764" y="-606"/>
+        </scene>
+        <!--Новости-->
+        <scene sceneID="wat-3I-27Z">
+            <objects>
+                <navigationController storyboardIdentifier="CustomNavigationControllerNews" id="dGY-B0-jcz" customClass="CustomNavigationController" customModule="SocialProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Новости" image="newspaper" catalog="system" id="eAn-aM-r5U">
+                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vOT-0B-P6f">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="b9G-jH-e5G" kind="relationship" relationship="rootViewController" id="1zz-5y-kb6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hMk-gL-cvP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3764" y="767"/>
         </scene>
     </scenes>
     <resources>
+        <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="plus" catalog="system" width="128" height="113"/>
