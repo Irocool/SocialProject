@@ -125,7 +125,7 @@
                 <outlet property="postTextLabel" destination="HbF-Sq-nU5" id="bNs-Y5-c8f"/>
                 <outlet property="viewCountLabel" destination="nS6-gx-I96" id="tzk-Pg-1ga"/>
             </connections>
-            <point key="canvasLocation" x="-522" y="193"/>
+            <point key="canvasLocation" x="-523.1884057971015" y="192.52232142857142"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -27,9 +27,7 @@ class PostCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupImageView() {
-        self.addSubview(imageView)
         imageView.contentMode = .scaleAspectFill
-        
     }
     
     private func setupLikeButton() {
@@ -46,7 +44,7 @@ class PostCollectionViewCell: UICollectionViewCell {
         post = item as? Post
         
         imageView.image = item.image
-       
+        
         setupLikeButton()
     }
     
@@ -64,19 +62,18 @@ class PostCollectionViewCell: UICollectionViewCell {
         
         self.post?.changeLikeState()
     }
-
+    
     @IBAction func likeButtonPressed(_ sender: UIButton) {
         guard let post = self.post else { return }
         
         if post.likeState == .dislike {
             likeButton.setImage(likeImage, for: .normal)
-            //changeLikeState()
+            changeLikeState()
         } else {
             likeButton.setImage(dislikeImage, for: .normal)
-            //hangeLikeState()
+            changeLikeState()
         }
         
         print(#function)
     }
-
 }
