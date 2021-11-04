@@ -392,13 +392,14 @@
         <scene sceneID="wat-3I-27Z">
             <objects>
                 <navigationController storyboardIdentifier="CustomNavigationControllerNews" id="dGY-B0-jcz" customClass="CustomNavigationController" customModule="SocialProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Новости" image="newspaper" catalog="system" id="eAn-aM-r5U">
+                    <tabBarItem key="tabBarItem" title="Новости" image="list.bullet" catalog="system" id="eAn-aM-r5U">
                         <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vOT-0B-P6f">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.97484000770000001" green="0.84211796559999996" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -411,7 +412,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="newspaper" catalog="system" width="128" height="108"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="plus" catalog="system" width="128" height="113"/>
