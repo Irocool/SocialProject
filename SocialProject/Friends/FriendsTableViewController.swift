@@ -91,9 +91,9 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
     
         
         let sectionLetter = searchSections[indexPath.section]
-    var _ = searchData[sectionLetter]![indexPath.row]
-        
-
+        let user = searchData[sectionLetter]![indexPath.row]
+        vc.posts = user.posts
+        vc.title = user.name
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
