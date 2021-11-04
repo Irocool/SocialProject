@@ -16,10 +16,9 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellReuseIdentifier: reuseIdentifier)
-        
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 200
+        tableView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellReuseIdentifier: "NewsTableViewCell")
+  
+        tableView.rowHeight = 450
         
         getNews()
     }

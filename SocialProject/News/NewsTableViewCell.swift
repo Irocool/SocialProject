@@ -28,13 +28,12 @@ class NewsTableViewCell: UITableViewCell {
         
         contentView.backgroundColor = Colors.palePurplePantone
         setupView()
-        
+
     }
 
-    
     private func setupView() {
         self.contentView.backgroundColor = Colors.palePurplePantone
-        setupAvatarImageView()
+      setupAvatarImageView()
         setupNameLabel()
         setupDateLabel()
         setupTextLabel()

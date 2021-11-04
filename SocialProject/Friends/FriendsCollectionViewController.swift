@@ -15,9 +15,10 @@ class FriendsCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: "PostCollectionViewCell")
 
         view.backgroundColor = Colors.palePurplePantone
+
     }
 
     // MARK: UICollectionViewDataSource
@@ -35,7 +36,7 @@ class FriendsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PostCollectionViewCell
         
         cell.setValues(item: posts[indexPath.item])
-    
+        cell.frame = CGRect(x: 10, y: 10, width: 100, height: 500)     
         return cell
     }
     
