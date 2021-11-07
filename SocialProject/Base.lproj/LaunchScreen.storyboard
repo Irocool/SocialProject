@@ -26,7 +26,8 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemBlueColor"/>
                         <constraints>
                             <constraint firstItem="Hl7-PP-xKK" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="2l2-lL-woG"/>
                             <constraint firstItem="Hl7-PP-xKK" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Mmm-97-43R"/>
@@ -48,8 +49,8 @@
     </scenes>
     <resources>
         <image name="vkicon1024" width="1024" height="1024"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

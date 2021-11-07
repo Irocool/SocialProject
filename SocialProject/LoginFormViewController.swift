@@ -37,8 +37,7 @@ class LoginFormViewController: UIViewController {
         setupButton()
         setupTextFields()
         setupLoadingView()
-        
-      
+        runAnimate()
     }
     
     // MARK: - Настройки элементов UI
@@ -67,7 +66,7 @@ class LoginFormViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
+        runAnimate()
         // Подписка на уведомления
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -78,6 +77,25 @@ class LoginFormViewController: UIViewController {
         
         // Отписка от уведомлений
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    //MARK: - Анимация
+    func runAnimate() {
+        transitionAnimate()
+    }
+    func transitionAnimate() {
+        UIView.transition(with: SocialProjLabel,
+                          duration: 1,
+                          options: [.repeat, .autoreverse, .transitionCrossDissolve],
+                          animations: { [weak self] in
+            self?.SocialProjLabel.text = "tcejorPlaicoS"
+        })
+
+//        UIView.transition(from: backgroundView,
+//                          to: topImageView,
+//                          duration: 1,
+//                          options: [.transitionFlipFromLeft, .repeat, .autoreverse],
+//                          completion: nil )
     }
 
     // MARK: - Настройки использования клавиатуры
