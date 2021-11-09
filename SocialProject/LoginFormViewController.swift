@@ -37,7 +37,6 @@ class LoginFormViewController: UIViewController {
         setupButton()
         setupTextFields()
         setupLoadingView()
-        runAnimate()
     }
     
     // MARK: - Настройки элементов UI
@@ -66,12 +65,15 @@ class LoginFormViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        runAnimate()
+       
         // Подписка на уведомления
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        runAnimate()
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -88,7 +90,7 @@ class LoginFormViewController: UIViewController {
                           duration: 1,
                           options: [.repeat, .autoreverse, .transitionCrossDissolve],
                           animations: { [weak self] in
-            self?.SocialProjLabel.text = "tcejorPlaicoS"
+            self?.SocialProjLabel.text = "Project Social"
         })
 
 //        UIView.transition(from: backgroundView,
