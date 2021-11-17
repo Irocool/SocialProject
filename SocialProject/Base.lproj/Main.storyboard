@@ -14,21 +14,23 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginFormViewController" customModule="SocialProject" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GradientView" customModule="SocialProject" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qe-0B-uzD">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-tV-kKU" userLabel="Content View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-tV-kKU" userLabel="Content View" customClass="GradientView" customModule="SocialProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAN-eG-PpW">
-                                                <rect key="frame" x="40" y="141" width="336" height="42"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="40" y="141" width="336" height="59.5"/>
+                                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="46"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <color key="shadowColor" systemColor="systemIndigoColor"/>
+                                                <size key="shadowOffset" width="0.0" height="1"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="admin" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q36-lI-Hwa" userLabel="emailOrPhone">
                                                 <rect key="frame" x="40" y="343" width="336" height="34"/>
@@ -65,6 +67,20 @@
                                             <constraint firstItem="Q36-lI-Hwa" firstAttribute="leading" secondItem="F5F-tV-kKU" secondAttribute="leading" constant="40" id="xc2-F3-TXe"/>
                                             <constraint firstItem="Q36-lI-Hwa" firstAttribute="leading" secondItem="xfD-pZ-WZu" secondAttribute="leading" id="yAj-RZ-2Y7"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                <color key="value" red="0.97484000770000001" green="0.84211796559999996" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -87,6 +103,20 @@
                             <constraint firstItem="7qe-0B-uzD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RiF-Ps-Slt"/>
                             <constraint firstItem="7qe-0B-uzD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uOE-f1-iVo"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" red="0.97484000770000001" green="0.84211796559999996" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="BDU-f5-VMJ"/>
                     <connections>
@@ -271,12 +301,19 @@
                             <outlet property="delegate" destination="fDE-av-cTT" id="d9o-cH-A3i"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Друзья" id="E8L-ai-RQg"/>
+                    <navigationItem key="navigationItem" title="Друзья" id="E8L-ai-RQg">
+                        <barButtonItem key="leftBarButtonItem" title="logOut" id="qnR-c6-Xu3">
+                            <connections>
+                                <action selector="logOut:" destination="f48-QX-Y0m" id="9wV-P1-Qff"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchView" destination="B7j-i8-Weg" id="wME-ge-zdG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJt-bG-zbE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="f48-QX-Y0m" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4577" y="-606"/>
         </scene>
@@ -392,13 +429,14 @@
         <scene sceneID="wat-3I-27Z">
             <objects>
                 <navigationController storyboardIdentifier="CustomNavigationControllerNews" id="dGY-B0-jcz" customClass="CustomNavigationController" customModule="SocialProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Новости" image="newspaper" catalog="system" id="eAn-aM-r5U">
+                    <tabBarItem key="tabBarItem" title="Новости" image="list.bullet" catalog="system" id="eAn-aM-r5U">
                         <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vOT-0B-P6f">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.97484000770000001" green="0.84211796559999996" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -411,12 +449,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="newspaper" catalog="system" width="128" height="108"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

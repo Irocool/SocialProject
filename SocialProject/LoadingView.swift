@@ -2,7 +2,7 @@
 //  LoadingView.swift
 //  SocialProject
 //
-//  Created by Пользователь on 10.06.2021.
+//  Created by Irina Kuligina on 10.06.2021.
 //
 import UIKit
 

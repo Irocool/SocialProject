@@ -37,8 +37,6 @@ class LoginFormViewController: UIViewController {
         setupButton()
         setupTextFields()
         setupLoadingView()
-        
-      
     }
     
     // MARK: - Настройки элементов UI
@@ -67,19 +65,61 @@ class LoginFormViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
+       
         // Подписка на уведомления
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        runAnimate()
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         // Отписка от уведомлений
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     }
+    
+    //MARK: - Анимация
+    func runAnimate() {
+        transitionAnimate()
+        spingAnimation()
+        
+    }
+    
+    func transitionAnimate() {
+        UIView.transition(with: SocialProjLabel,
+                          duration: 1,
+                          options: [.repeat, .autoreverse, .transitionCrossDissolve],
+                          animations: { [weak self] in
+            self?.SocialProjLabel.text = "Project Social"
+        })
+    }
+    
+    func spingAnimation() {
+        let animation = CASpringAnimation(keyPath: "position.x")
+        animation.fromValue = emailPhoneTextField.layer.position.x + 500
+        animation.toValue = emailPhoneTextField.layer.position.x
+        animation.duration = 2
+        animation.timingFunction = .init(name: .easeInEaseOut)
+        animation.mass = 2
+        animation.stiffness = 50
+        emailPhoneTextField.layer.add(animation, forKey: nil)
 
+        passwordTextField.frame.origin.x += 500
+
+        UIView.animate(withDuration: 2,
+                       delay: 0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0,
+                       options: .curveEaseInOut,
+                       animations: { [weak self] in
+            guard let self = self else { return }
+            self.passwordTextField.frame.origin.x = self.emailPhoneTextField.frame.origin.x
+        })
+    }
+    
     // MARK: - Настройки использования клавиатуры
     @objc func keyboardWasShown(notification: Notification) {
         let info = notification.userInfo! as NSDictionary
@@ -140,6 +180,9 @@ class LoginFormViewController: UIViewController {
             showLoginErrorAlert()
         }
     }
+    
+ 
+   // @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {}
     
     func loadingWhileEnter() {
         loadingView.isHidden = false
