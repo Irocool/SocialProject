@@ -49,7 +49,7 @@ class GroupTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
         
         cell.setValues(item: addedGroups[indexPath.row])
-
+        
         return cell
     }
     
