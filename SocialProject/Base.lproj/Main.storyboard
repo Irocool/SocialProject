@@ -301,12 +301,19 @@
                             <outlet property="delegate" destination="fDE-av-cTT" id="d9o-cH-A3i"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Друзья" id="E8L-ai-RQg"/>
+                    <navigationItem key="navigationItem" title="Друзья" id="E8L-ai-RQg">
+                        <barButtonItem key="leftBarButtonItem" title="logOut" id="qnR-c6-Xu3">
+                            <connections>
+                                <action selector="logOut:" destination="f48-QX-Y0m" id="9wV-P1-Qff"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchView" destination="B7j-i8-Weg" id="wME-ge-zdG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJt-bG-zbE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="f48-QX-Y0m" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4577" y="-606"/>
         </scene>
